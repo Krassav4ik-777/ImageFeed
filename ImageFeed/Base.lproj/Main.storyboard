@@ -37,8 +37,8 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27 августа 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOX-K4-uhS" userLabel="Date Label">
-                                                    <rect key="frame" x="24" y="186" width="101.5" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <rect key="frame" x="24" y="185" width="108.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -61,6 +61,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="cellImage" destination="cI0-Ir-a7y" id="djV-G4-z0J"/>
+                                            <outlet property="dateLabel" destination="pOX-K4-uhS" id="jYE-qB-ezD"/>
+                                            <outlet property="likeButton" destination="wya-Hh-Sil" id="orE-yc-TQ3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
