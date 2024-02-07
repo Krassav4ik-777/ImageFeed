@@ -27,6 +27,18 @@ final class ImagesListViewController: UIViewController {
         // cвойство типа UIEdgeInsets, которое определяет отступы содержимого внутри контейнера
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
     }
+    
+    // метод реализации нужной картинки
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowSingleImage" {
+            let viewController = segue.destination as! SingleImageViewController
+            let indexPath = sender as! IndexPath
+            let image = UIImage(named: photosName[indexPath.row])
+            viewController.image = image
+        } else {
+            super.prepare(for: segue, sender: sender)
+        }
+    }
 }
 
 // определяет методы, которые необходимо реализовать для работы с данными в таблице
@@ -72,7 +84,9 @@ extension ImagesListViewController {
 // вызывается при выборе определенной строки таблицы
 extension ImagesListViewController: UITableViewDelegate {
     // метод реализует обработку события выбора строки в таблице
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowSingleImage", sender: indexPath)
+    }
 
     // используется для определения высоты строки таблицы для определенного индекса
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
