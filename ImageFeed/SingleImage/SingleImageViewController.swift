@@ -7,6 +7,8 @@
 import UIKit
 
 final class SingleImageViewController: UIViewController {
+    
+    // MARK: - Public Methods
     var image: UIImage! {
         didSet {
             guard isViewLoaded else { return }
@@ -15,9 +17,11 @@ final class SingleImageViewController: UIViewController {
         }
     }
     
+    // MARK: - IB Outlets
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
@@ -28,20 +32,7 @@ final class SingleImageViewController: UIViewController {
         rescaleAndCenterImageInScrollView(image: image)
     }
     
-    // Кнопка возврата
-    @IBAction private func didTapBackButton() {
-        dismiss(animated: true,completion: nil)
-    }
-    
-    // Добавление шеринга кнопки
-    @IBAction func didTapShareButton(_ sender: UIButton) {
-        let share = UIActivityViewController(
-            activityItems: [image!],
-            applicationActivities: nil
-        )
-        present(share, animated: true, completion: nil)
-    }
-    
+    // MARK: - Private Methods
     // Алгоритм рескейла
     private func rescaleAndCenterImageInScrollView(image: UIImage) {
         let minZoomScale = scrollView.minimumZoomScale
@@ -59,8 +50,24 @@ final class SingleImageViewController: UIViewController {
         let y = (newContentSize.height - visibleRectSize.height) / 2
         scrollView.setContentOffset(CGPoint(x: x, y: y), animated: false)
     }
+    
+    // MARK: - IBActions
+    // Кнопка возврата
+    @IBAction private func didTapBackButton() {
+        dismiss(animated: true,completion: nil)
+    }
+    
+    // Добавление шеринга кнопки
+    @IBAction func didTapShareButton(_ sender: UIButton) {
+        let share = UIActivityViewController(
+            activityItems: [image!],
+            applicationActivities: nil
+        )
+        present(share, animated: true, completion: nil)
+    }
 }
 
+//MARK: - Extension
 // метод сообщающий ScrollView какую Вью зумить
 extension SingleImageViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

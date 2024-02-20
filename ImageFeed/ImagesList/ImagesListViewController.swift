@@ -3,14 +3,15 @@
 //  ImageFeed
 //
 //  Created by KraSSavchiK on 28.12.2023.
-//
 
 import UIKit
 
 final class ImagesListViewController: UIViewController {
     
+    // MARK: - IB Outlets
     @IBOutlet private var tableView: UITableView!
     
+    // MARK: - Private Properties
     // вызов метода map для преобразования каждого элемента массива чисел в строку
     private let photosName: [String] = Array(0..<20).map{ "\($0)" }
     
@@ -22,6 +23,7 @@ final class ImagesListViewController: UIViewController {
         return formatter
     }()
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // cвойство типа UIEdgeInsets, которое определяет отступы содержимого внутри контейнера
@@ -41,6 +43,7 @@ final class ImagesListViewController: UIViewController {
     }
 }
 
+//MARK: - Extensions
 // определяет методы, которые необходимо реализовать для работы с данными в таблице
 extension ImagesListViewController: UITableViewDataSource {
     // метод должен вернуть количество строк, которые должны быть отображены в указанной секции таблицы
