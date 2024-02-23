@@ -19,10 +19,10 @@ final class SingleImageViewController: UIViewController {
     
     // MARK: - IB Outlets
     @IBOutlet private var imageView: UIImageView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet private var scrollView: UIScrollView!
     
     // MARK: - Lifecycle
-    override func viewDidLoad() {
+override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
         scrollView.minimumZoomScale = 0.1
