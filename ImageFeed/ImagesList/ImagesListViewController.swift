@@ -3,14 +3,15 @@
 //  ImageFeed
 //
 //  Created by KraSSavchiK on 28.12.2023.
-//
 
 import UIKit
 
 final class ImagesListViewController: UIViewController {
     
+    // MARK: - IB Outlets
     @IBOutlet private var tableView: UITableView!
     
+    // MARK: - Private Properties
     // вызов метода map для преобразования каждого элемента массива чисел в строку
     private let photosName: [String] = Array(0..<20).map{ "\($0)" }
     
@@ -22,13 +23,27 @@ final class ImagesListViewController: UIViewController {
         return formatter
     }()
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // cвойство типа UIEdgeInsets, которое определяет отступы содержимого внутри контейнера
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
     }
+    
+    // метод реализации нужной картинки
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowSingleImage" {
+            let viewController = segue.destination as! SingleImageViewController
+            let indexPath = sender as! IndexPath
+            let image = UIImage(named: photosName[indexPath.row])
+            viewController.image = image
+        } else {
+            super.prepare(for: segue, sender: sender)
+        }
+    }
 }
 
+//MARK: - Extensions
 // определяет методы, которые необходимо реализовать для работы с данными в таблице
 extension ImagesListViewController: UITableViewDataSource {
     // метод должен вернуть количество строк, которые должны быть отображены в указанной секции таблицы
@@ -72,7 +87,9 @@ extension ImagesListViewController {
 // вызывается при выборе определенной строки таблицы
 extension ImagesListViewController: UITableViewDelegate {
     // метод реализует обработку события выбора строки в таблице
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowSingleImage", sender: indexPath)
+    }
 
     // используется для определения высоты строки таблицы для определенного индекса
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
