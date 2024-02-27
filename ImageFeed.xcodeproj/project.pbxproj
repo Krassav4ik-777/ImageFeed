@@ -12,6 +12,9 @@
 		F4F8D5252B7267FD004F031A /* SingleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D5242B7267FC004F031A /* SingleImageViewController.swift */; };
 		F4F8D5292B84F870004F031A /* YS Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4F8D5272B84F86F004F031A /* YS Display-Bold.ttf */; };
 		F4F8D52A2B84F870004F031A /* YS Display-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4F8D5282B84F86F004F031A /* YS Display-Medium.ttf */; };
+		F4F8D52C2B89019D004F031A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D52B2B89019D004F031A /* Constants.swift */; };
+		F4F8D52F2B8A6AAE004F031A /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D52E2B8A6AAE004F031A /* AuthViewController.swift */; };
+		F4F8D5312B8A74FC004F031A /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D5302B8A74FC004F031A /* WebViewViewController.swift */; };
 		F4FCD64F2B3DB82300D6D088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCD64E2B3DB82300D6D088 /* AppDelegate.swift */; };
 		F4FCD6512B3DB82300D6D088 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCD6502B3DB82300D6D088 /* SceneDelegate.swift */; };
 		F4FCD6532B3DB82300D6D088 /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCD6522B3DB82300D6D088 /* ImagesListViewController.swift */; };
@@ -46,6 +49,9 @@
 		F4F8D5242B7267FC004F031A /* SingleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageViewController.swift; sourceTree = "<group>"; };
 		F4F8D5272B84F86F004F031A /* YS Display-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Bold.ttf"; sourceTree = "<group>"; };
 		F4F8D5282B84F86F004F031A /* YS Display-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Medium.ttf"; sourceTree = "<group>"; };
+		F4F8D52B2B89019D004F031A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F4F8D52E2B8A6AAE004F031A /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		F4F8D5302B8A74FC004F031A /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		F4FCD64B2B3DB82300D6D088 /* ImageFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FCD64E2B3DB82300D6D088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4FCD6502B3DB82300D6D088 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +137,15 @@
 			path = "YYS Display";
 			sourceTree = "<group>";
 		};
+		F4F8D52D2B8A6A7E004F031A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F4F8D52E2B8A6AAE004F031A /* AuthViewController.swift */,
+				F4F8D5302B8A74FC004F031A /* WebViewViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		F4FCD6422B3DB82300D6D088 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +171,8 @@
 			children = (
 				F4FCD64E2B3DB82300D6D088 /* AppDelegate.swift */,
 				F4FCD6502B3DB82300D6D088 /* SceneDelegate.swift */,
+				F4F8D52B2B89019D004F031A /* Constants.swift */,
+				F4F8D52D2B8A6A7E004F031A /* Auth */,
 				F4F8D5232B7267BA004F031A /* SingleImage */,
 				F4F8D5202B69484E004F031A /* Profile */,
 				F49A61FA2B57F27D00E82E75 /* ImagesList */,
@@ -319,7 +336,10 @@
 				F49A61F92B5722AE00E82E75 /* ImagesListCell.swift in Sources */,
 				F4F8D5222B694883004F031A /* ProfileViewController.swift in Sources */,
 				F4FCD64F2B3DB82300D6D088 /* AppDelegate.swift in Sources */,
+				F4F8D52F2B8A6AAE004F031A /* AuthViewController.swift in Sources */,
+				F4F8D52C2B89019D004F031A /* Constants.swift in Sources */,
 				F4F8D5252B7267FD004F031A /* SingleImageViewController.swift in Sources */,
+				F4F8D5312B8A74FC004F031A /* WebViewViewController.swift in Sources */,
 				F4FCD6512B3DB82300D6D088 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
